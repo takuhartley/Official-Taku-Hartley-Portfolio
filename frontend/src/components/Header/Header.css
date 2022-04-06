@@ -1,0 +1,14 @@
+.project_card {
+  border: 1px solid red;
+}
+
+.project_card .project_card_title {
+  position: absolute;
+}
+
+.project_card .project_card_header {
+  height: 400px;
+  width: 600px;
+  border-radius: 25px;
+}
+/*# sourceMappingURL=Header.css.map */
