@@ -7,7 +7,7 @@ import Project from "../Project/Project";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Grid, Container } from "@mui/material";
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
       <CssBaseline />

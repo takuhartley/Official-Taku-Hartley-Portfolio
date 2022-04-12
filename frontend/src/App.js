@@ -8,20 +8,16 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 
 // Style
-function App() {
+const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <div className="App">
-          <Header />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-          </Routes>
-          <Footer />
-        </div>
-      </BrowserRouter>
+      <div className="App">
+        <Header />
+        <Home />
+        <Footer />
+      </div>
     </>
   );
-}
+};
 
 export default App;
