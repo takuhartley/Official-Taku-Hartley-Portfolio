@@ -1,10 +1,13 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 // Style
 import "./index.css";
-
+//Pages
+import Home from "../src/pages/Home/Home";
 import App from "./App";
 
 //Vitals
@@ -19,7 +22,13 @@ const root = createRoot(rootElement);
 root.render(
   // Adding Strictmode
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );
 

@@ -1,10 +1,10 @@
 import React from "react";
-import "./Introduction.css";
+import "./Banner.scss";
 
-const Introduction = () => {
+const Banner = () => {
   return (
     <>
-      <div className="introduction">
+      <div className="banner">
         <div className="pre-header">
           <p>My name is</p>
         </div>
@@ -19,4 +19,4 @@ const Introduction = () => {
   );
 };
 
-export default Introduction;
+export default Banner;

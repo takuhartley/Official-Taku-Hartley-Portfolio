@@ -1,0 +1,32 @@
+.banner {
+  background-color: rgb(22, 22, 22);
+  height: 95vh;
+  width: 100vw;
+  padding: 10%;
+
+  .pre-header {
+    p {
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .header {
+    h1 {
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .sub-header {
+    p {
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
