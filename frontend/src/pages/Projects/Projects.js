@@ -3,15 +3,12 @@ import React from "react";
 import projects from "../../projects";
 // Pages
 import Project from "../Project/Project";
-import Banner from "../Banner/Banner";
-
 // MUI
 import { Grid, Container } from "@mui/material";
 
-const Home = () => {
+const Projects = () => {
   return (
     <>
-      <Banner />
       <Container maxWidth="md">
         <h1>My stuff</h1>
         <Grid
@@ -28,4 +25,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Projects;

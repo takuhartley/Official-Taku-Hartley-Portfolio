@@ -16,8 +16,6 @@ import {
   MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-
-const pages = ["Home", "Projects", "About", "Contact"];
 // const userLoggedIn = false;
 
 const Header = () => {
@@ -89,15 +87,11 @@ const Header = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Link to="/">Home</Link>
+            <Link to="/projects">Projects</Link>
+            <Link to="/about">Me?</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/login">Sign-In</Link>
           </Box>
         </Toolbar>
       </Container>

@@ -7,8 +7,11 @@ import { createRoot } from "react-dom/client";
 // Style
 import "./index.css";
 //Pages
-import Home from "../src/pages/Home/Home";
+
 import App from "./App";
+import About from "../src/pages/About/About";
+import Login from "../src/components/Authentication/Login/Login";
+import Contact from "../src/pages/Contact/Contact";
 
 //Vitals
 import reportWebVitals from "./reportWebVitals";
@@ -23,11 +26,7 @@ root.render(
   // Adding Strictmode
   <StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-        </Route>
-      </Routes>
+      <App />
     </BrowserRouter>
   </StrictMode>
 );

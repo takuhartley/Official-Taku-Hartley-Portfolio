@@ -44,6 +44,15 @@ const projects = [
     category: "Project",
     likes: 0,
   },
+  {
+    _id: "6",
+    name: "Project 1",
+    image: "/images/project1.jpg",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    category: "Project",
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aut commodi, fugit velit nemo recusandae voluptas molestias quo sint esse rem ad temporibus fugiat, at excepturi a corporis odit totam.",
+    likes: 0,
+  },
 ];
 
 export default projects;

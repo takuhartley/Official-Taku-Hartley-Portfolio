@@ -1,0 +1,27 @@
+.banner {
+  background-color: #161616;
+  height: 95vh;
+  width: 100vw;
+  padding: 10%;
+}
+
+.banner .pre-header p {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.banner .header h1 {
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.banner .sub-header p {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=Banner.css.map */
