@@ -1,0 +1,23 @@
+{
+  "name": "official_taku_hartley",
+  "version": "1.0.0",
+  "description": "Official Taku Hartley Website I think?",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takuhartley/Official-Taku-Hartley-Portfolio.git"
+  },
+  "author": "Taku Hartley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takuhartley/Official-Taku-Hartley-Portfolio/issues"
+  },
+  "homepage": "https://github.com/takuhartley/Official-Taku-Hartley-Portfolio#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3"
+  }
+}

@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 // Data
-import projects from "../../projects";
+
 // Pages
 import Project from "../Project/Project";
 // MUI
 import { Grid, Container } from "@mui/material";
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const { data } = await axios.get("/api/projects");
+      setProjects(data);
+    };
+    fetchProjects();
+  }, []);
+
   return (
     <>
       <Container maxWidth="md">

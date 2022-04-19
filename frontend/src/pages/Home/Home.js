@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 // Data
-import projects from "../../projects";
 // Pages
 import Project from "../Project/Project";
 import Banner from "../Banner/Banner";
@@ -9,6 +9,15 @@ import Banner from "../Banner/Banner";
 import { Grid, Container } from "@mui/material";
 
 const Home = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const { data } = await axios.get("/api/projects");
+      setProjects(data);
+    };
+    fetchProjects();
+  }, []);
   return (
     <>
       <Banner />

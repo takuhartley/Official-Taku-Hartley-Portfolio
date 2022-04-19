@@ -11,6 +11,7 @@ import About from "../src/pages/About/About";
 import Contact from "../src/pages/Contact/Contact";
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
+import ProjectDetails from "./pages/ProjectDetails/ProjectDetails";
 // Style
 import CssBaseline from "@mui/material/CssBaseline";
 
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="login" element={<Login />} />
           <Route path="contact" element={<Contact />} />
           <Route path="projects" element={<Projects />} />
+          <Route path="project/:id" element={<ProjectDetails />} />
         </Routes>
       </div>
       <Footer />

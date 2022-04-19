@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -9,9 +9,6 @@ import "./index.css";
 //Pages
 
 import App from "./App";
-import About from "../src/pages/About/About";
-import Login from "../src/components/Authentication/Login/Login";
-import Contact from "../src/pages/Contact/Contact";
 
 //Vitals
 import reportWebVitals from "./reportWebVitals";
