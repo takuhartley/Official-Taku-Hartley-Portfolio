@@ -1,6 +1,5 @@
 const projects = [
   {
-    _id: "1",
     name: "Project 1",
     image: "/images/project1.jpg",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -9,7 +8,6 @@ const projects = [
     likes: 0,
   },
   {
-    _id: "2",
     name: "Project 2",
     image: "/images/project2.jpg",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -18,7 +16,6 @@ const projects = [
     likes: 0,
   },
   {
-    _id: "3",
     name: "Project 3",
     image: "/images/project3.jpg",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -27,7 +24,6 @@ const projects = [
     likes: 0,
   },
   {
-    _id: "4",
     name: "Project 4",
     image: "/images/project4.jpg",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -36,7 +32,6 @@ const projects = [
     likes: 0,
   },
   {
-    _id: "5",
     name: "Project 5",
     image: "/images/project5.jpg",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -45,8 +40,7 @@ const projects = [
     likes: 0,
   },
   {
-    _id: "6",
-    name: "Project 1",
+    name: "Project 6",
     image: "/images/project1.jpg",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     category: "Project",
@@ -54,5 +48,4 @@ const projects = [
     likes: 0,
   },
 ];
-
-module.exports = projects;
+export default projects;

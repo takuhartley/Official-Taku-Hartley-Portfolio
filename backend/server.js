@@ -1,9 +1,13 @@
-const express = require("express");
-const dotenv = require("dotenv");
+import express from "express";
+import dotenv from "dotenv";
+import chalk from "chalk";
+import connectDB from "./configuration/database.js";
 
-const projects = require("./data/projects");
-
+import projectRoutes from "./routes/projectRoutes.js";
+//import userRoutes from "./routes/userRoutes.js";
 dotenv.config();
+
+connectDB();
 
 const app = express();
 
@@ -11,15 +15,23 @@ app.get("/", (req, res) => {
   res.send("Working API");
 });
 
-app.get("/api/projects", (req, res) => {
-  res.json(projects);
-});
-
-app.get("/api/projects/:id", (req, res) => {
-  const project = project.find((p) => p._id === req.params.id);
-  res.json(projects);
-});
+app.use("/api/projects", projectRoutes);
 
 const PORT = process.env.PORT || 5000;
 const MODE = process.env.NODE_ENV;
-app.listen(PORT, console.log(`Server running well in ${MODE} mode on port ${PORT} boss`));
+app.listen(
+  PORT,
+  console.log(
+    chalk.underline.bold.green(
+      `Server running well in ${MODE} mode on port ${PORT} Boss`
+    )
+  )
+);
+
+process.on("SIGTERM", () => {
+  server.close(() => {
+    console.log(
+      chalk.inverse.underline.bold.red("PROCESS WAS TERMINATED YOU FOOL")
+    );
+  });
+});
