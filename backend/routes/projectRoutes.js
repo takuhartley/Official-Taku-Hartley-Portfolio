@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import Project from "../models/projectModel";
+import Project from "../models/projectModel.js";
 
 router.get("/", async (req, res) => {
   const projects = await Project.find({});
