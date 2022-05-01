@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 app.use("/api/projects", projectRoutes);
 
 const PORT = process.env.PORT || 5000;
+
 const MODE = process.env.NODE_ENV;
 app.listen(
   PORT,
