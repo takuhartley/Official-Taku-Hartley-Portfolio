@@ -13,7 +13,11 @@ const ProjectDetails = () => {
     };
     fetchProject();
   }, [id]);
-  return <div>{id}</div>;
+  return (
+    <>
+      <div>{id}</div>
+    </>
+  );
 };
 
 export default ProjectDetails;

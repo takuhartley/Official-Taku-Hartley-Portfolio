@@ -88,8 +88,7 @@ const Header = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Link to="/">Home</Link>
             <Link to="/projects">Projects</Link>
-            <Link to="/about">Me?</Link>
-            <Link to="/contact">Contact</Link>
+            <Link to="/about">Me</Link>
             <Link to="/login">Sign-In</Link>
           </Box>
         </Toolbar>

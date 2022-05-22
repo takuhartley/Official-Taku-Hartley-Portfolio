@@ -1,13 +1,10 @@
 import express from "express";
 const router = express.Router();
-import Project from "../models/projectModel.js";
+import {
+  getProjects,
+  getProjectById,
+} from "../controllers/projectController.js";
 
-router.get("/", async (req, res) => {
-  const projects = await Project.find({});
-});
-
-router.get("/:id", (req, res) => {
-  const project = project.find((p) => p._id === req.params.id);
-  res.json(projects);
-});
+router.route("/").get(getProjects);
+router.route("/:id").get(getProjectById);
 export default router;
