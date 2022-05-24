@@ -1,4 +1,6 @@
-import * as React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -31,6 +33,9 @@ function Copyright(props) {
 const theme = createTheme();
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
