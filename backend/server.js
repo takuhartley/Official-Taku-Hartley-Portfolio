@@ -5,12 +5,12 @@ import connectDB from "./configuration/database.js";
 
 // @routes
 import projectRoutes from "./routes/projectRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 
 // Connect to DB
 connectDB();
-
 
 const app = express();
 
@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/projects", projectRoutes);
+app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 const MODE = process.env.NODE_ENV;

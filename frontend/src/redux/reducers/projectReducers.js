@@ -16,13 +16,6 @@ import {
   PROJECT_UPDATE_SUCCESS,
   PROJECT_UPDATE_FAIL,
   PROJECT_UPDATE_RESET,
-  PROJECT_CREATE_REVIEW_REQUEST,
-  PROJECT_CREATE_REVIEW_SUCCESS,
-  PROJECT_CREATE_REVIEW_FAIL,
-  PROJECT_CREATE_REVIEW_RESET,
-  PROJECT_TOP_REQUEST,
-  PROJECT_TOP_SUCCESS,
-  PROJECT_TOP_FAIL,
 } from "../constants/projectConstants";
 
 export const projectsListReducer = (state = { projectss: [] }, action) => {
