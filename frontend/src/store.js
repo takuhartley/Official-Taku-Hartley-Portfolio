@@ -2,14 +2,12 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
-  projectListReducer,
   projectDetailsReducer,
   projectDeleteReducer,
   projectCreateReducer,
   projectUpdateReducer,
-  projectReviewCreateReducer,
-  projectTopRatedReducer,
-} from ".redux/reducers/projectReducers";
+  projectsListReducer,
+} from "./redux/reducers/projectReducers";
 
 import {
   userLoginReducer,
@@ -19,16 +17,14 @@ import {
   userListReducer,
   userDeleteReducer,
   userUpdateReducer,
-} from "./redux/reducers/projectReducers.js";
+} from "./redux/reducers/userReducers.js";
 
 const reducer = combineReducers({
-  projectList: projectListReducer,
+  projectList: projectsListReducer,
   projectDetails: projectDetailsReducer,
   projectDelete: projectDeleteReducer,
   projectCreate: projectCreateReducer,
   projectUpdate: projectUpdateReducer,
-  projectReviewCreate: projectReviewCreateReducer,
-  projectTopRated: projectTopRatedReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   userDetails: userDetailsReducer,

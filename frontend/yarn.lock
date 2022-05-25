@@ -7756,6 +7756,11 @@
     "@react-spring/web" "~9.4.5"
     "@react-spring/zdog" "~9.4.5"
 
+"react-thunk@^1.0.0":
+  "integrity" "sha1-eYE9R/MRR+ga7oQe1edqnj6ryLE="
+  "resolved" "https://registry.npmjs.org/react-thunk/-/react-thunk-1.0.0.tgz"
+  "version" "1.0.0"
+
 "react-transition-group@^4.4.2":
   "integrity" "sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg=="
   "resolved" "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.2.tgz"

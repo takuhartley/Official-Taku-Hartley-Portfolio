@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import chalk from "chalk";
 import connectDB from "./configuration/database.js";
 
-// @routes
+// routes
 import projectRoutes from "./routes/projectRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 

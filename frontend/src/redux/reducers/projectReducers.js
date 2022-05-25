@@ -18,7 +18,7 @@ import {
   PROJECT_UPDATE_RESET,
 } from "../constants/projectConstants";
 
-export const projectsListReducer = (state = { projectss: [] }, action) => {
+export const projectsListReducer = (state = { projects: [] }, action) => {
   switch (action.type) {
     case PROJECT_LIST_REQUEST:
       return { loading: true, projects: [] };
@@ -87,34 +87,6 @@ export const projectUpdateReducer = (state = { project: {} }, action) => {
       return { loading: false, error: action.payload };
     case PROJECT_UPDATE_RESET:
       return { project: {} };
-    default:
-      return state;
-  }
-};
-
-export const projectReviewCreateReducer = (state = {}, action) => {
-  switch (action.type) {
-    case PROJECT_CREATE_REVIEW_REQUEST:
-      return { loading: true };
-    case PROJECT_CREATE_REVIEW_SUCCESS:
-      return { loading: false, success: true };
-    case PROJECT_CREATE_REVIEW_FAIL:
-      return { loading: false, error: action.payload };
-    case PROJECT_CREATE_REVIEW_RESET:
-      return {};
-    default:
-      return state;
-  }
-};
-
-export const projectTopRatedReducer = (state = { projects: [] }, action) => {
-  switch (action.type) {
-    case project_TOP_REQUEST:
-      return { loading: true, projects: [] };
-    case project_TOP_SUCCESS:
-      return { loading: false, projects: action.payload };
-    case project_TOP_FAIL:
-      return { loading: false, error: action.payload };
     default:
       return state;
   }

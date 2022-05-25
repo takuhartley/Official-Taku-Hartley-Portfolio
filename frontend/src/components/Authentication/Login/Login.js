@@ -1,48 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../../redux/actions/userActions";
+
+import Copyright from "../../Copyright/Copyright";
 
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright ©TakuHartley "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const theme = createTheme();
 
 const Login = () => {
+  let location = useLocation();
+  let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/");
+    }
+  }, [navigate, userInfo]);
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    console.log(email, password);
+    dispatch(login(email, password));
+    navigate("/");
   };
 
   return (
@@ -84,8 +77,8 @@ const Login = () => {
             </Typography>
             <Box
               component="form"
-              noValidate
               onSubmit={handleSubmit}
+              noValidate
               sx={{ mt: 1 }}
             >
               <TextField
@@ -97,6 +90,9 @@ const Login = () => {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                error={false}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <TextField
                 margin="normal"
@@ -107,10 +103,9 @@ const Login = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                error={false}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <Button
                 type="submit"
@@ -120,15 +115,8 @@ const Login = () => {
               >
                 Sign In
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-              </Grid>
-              <Copyright sx={{ mt: 5 }} />
             </Box>
+            <Copyright sx={{ mt: 5 }} />
           </Box>
         </Grid>
       </Grid>

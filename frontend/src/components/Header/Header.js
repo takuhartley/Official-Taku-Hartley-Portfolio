@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/actions/userActions";
 // component
 
 // Style
 import "./Header.scss";
 import {
-  Box,
   AppBar,
+  Box,
   Toolbar,
   IconButton,
   Typography,
@@ -19,7 +21,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
-
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+  const dispatch = useDispatch();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -27,7 +31,9 @@ const Header = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -89,7 +95,23 @@ const Header = () => {
             <Link to="/">Home</Link>
             <Link to="/projects">Projects</Link>
             <Link to="/about">Me</Link>
-            <Link to="/login">Sign-In</Link>
+            {userInfo ? (
+              <Typography
+                variant="button"
+                display="block"
+                gutterBottom
+                onClick={logoutHandler}
+              >
+                Sign Out
+              </Typography>
+            ) : (
+              <Link to="/login">Sign In</Link>
+            )}
+            {userInfo ? (
+              <Link to="/dashboard">Dashboard</Link>
+            ) : (
+              <Link to="/about">Me</Link>
+            )}
           </Box>
         </Toolbar>
       </Container>
