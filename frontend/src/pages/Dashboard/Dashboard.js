@@ -19,6 +19,7 @@ const Dashboard = () => {
   const { userInfo } = userLogin;
   const userDelete = useSelector((state) => state.userDelete);
   const { success: successDelete } = userDelete;
+  
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listUsers());
@@ -26,11 +27,13 @@ const Dashboard = () => {
       navigate("/");
     }
   }, [dispatch, navigate, userInfo]);
+  
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure")) {
       dispatch(deleteUser(id));
     }
   };
+  
   return (
     <>
       <TableContainer component={Paper}>
@@ -45,11 +48,9 @@ const Dashboard = () => {
           <TableBody>
             {users.map((user) => (
               <TableRow key={user._id}>
-                <TableCell component="th" scope="row">
-                  {user._id}
-                </TableCell>
-                <TableCell align="right"></TableCell>
-                <TableCell align="right"></TableCell>
+                <TableCell component="th" scope="row">{user._id}</TableCell>
+                <TableCell align="right">{user.email}</TableCell>
+                <TableCell align="right">{user.admin}</TableCell>
               </TableRow>
             ))}
           </TableBody>
