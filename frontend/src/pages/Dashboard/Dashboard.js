@@ -22,10 +22,11 @@ const Dashboard = () => {
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listUsers());
+      console.log(users)
     } else {
       navigate("/");
     }
-  }, [dispatch, navigate, userInfo]);
+  }, [dispatch, navigate, userInfo, users]);
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure")) {
       dispatch(deleteUser(id));
